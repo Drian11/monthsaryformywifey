@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Memories 💕</title>
+  <style>
+    :root {
+      --bg: #180813;
+      --card-bg: rgba(35, 15, 28, 0.85);
+      --accent: #ff4b72;
+      --text: #fff0f3;
+      --text-muted: #ffb3c1;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: radial-gradient(circle at center, #2d0b22 0%, #0f030b 100%);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 50px 20px;
+      overflow-y: auto;
+      position: relative;
+    }
+
+    ::-webkit-scrollbar { width: 10px; }
+    ::-webkit-scrollbar-track { background: #0f030b; }
+    ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 10px; }
+
+    .heart-bg {
+      position: fixed;
+      color: rgba(255, 75, 114, 0.25);
+      animation: floatUp linear infinite;
+      user-select: none;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(100vh) scale(0.5); opacity: 0; }
+      50% { opacity: 0.8; }
+      100% { transform: translateY(-10vh) scale(1.2); opacity: 0; }
+    }
+
+    .section-card {
+      background: var(--card-bg);
+      backdrop-filter: blur(12px);
+      padding: 50px;
+      border-radius: 32px;
+      box-shadow: 0 20px 50px rgba(255, 75, 114, 0.2), 0 0 30px rgba(0, 0, 0, 0.6);
+      border: 1px solid rgba(255, 179, 193, 0.2);
+      max-width: 1100px;
+      width: 100%;
+      position: relative;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      gap: 35px;
+      margin-bottom: 40px;
+
+      animation: fadeIn 0.6s ease-out forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .page-exit {
+      animation: fadeOut 0.5s ease-in forwards !important;
+    }
+
+    @keyframes fadeOut {
+      from { opacity: 1; transform: translateY(0); }
+      to { opacity: 0; transform: translateY(-10px); }
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      width: 100%;
+    }
+
+    @media (max-width: 768px) {
+      .gallery-grid { grid-template-columns: 1fr; }
+    }
+
+    .gallery-photo {
+      width: 100%;
+      height: 280px;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 3px solid var(--accent);
+      box-shadow: 0 0 15px rgba(255, 75, 114, 0.3);
+      background-color: rgba(15, 3, 11, 0.6);
+    }
+
+    .gallery-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .message-content h3 {
+      font-size: 2.8rem;
+      color: var(--accent);
+      margin-bottom: 20px;
+      font-family: 'Comic Sans MS', 'cursive', sans-serif;
+      text-shadow: 0 0 10px rgba(255, 75, 114, 0.4);
+    }
+
+    .message-content p {
+      font-size: 1.25rem;
+      line-height: 1.9;
+      color: var(--text);
+      white-space: pre-line;
+      margin-bottom: 35px;
+    }
+
+    .btn-next {
+      align-self: center;
+      padding: 16px 36px;
+      background: linear-gradient(135deg, #ff4b72, #d946ef);
+      color: white;
+      border: none;
+      border-radius: 30px;
+      font-size: 1.15rem;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(255, 75, 114, 0.4);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .btn-next:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 20px rgba(255, 75, 114, 0.6);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="section-card" id="card">
+    <div class="gallery-grid">
+      <div class="gallery-photo"><img src="d:\photo3.jpg" alt="Photo A"></div>
+      <div class="gallery-photo"><img src="d:\photo4.jpg" alt="Photo B"></div>
+      <div class="gallery-photo"><img src="d:\photo5.jpg" alt="Photo C"></div>
+    </div>
+
+    <div class="message-content">
+      <h3>Staying Stronger Together💕</h3>
+      <p>
+        Today, it's our 13th monthsary and I am very happy to celebrate it. I know nga ang mindset sa uban kay like "ay 1 year pamo? sauna rana masaya", but of course, they don't know our story bb, they only saw our sweet moments but they never saw our struggles, about what really inside us.
+
+        It's not been very easy for us to come all the way here bb, that's why I am always so proud of having a girl like u, and dili lang ka basta girlfriend sa akoa bb but u're also my wife. U deserved to be loved to the fullest. And I hope na you'll like this bisag mao rani akong gibuhat for u mwehehehe.
+
+        Once again, HAPPY 13TH MONTHSARY FOR US MY ONE AND ONLY WIFEYYYY IN THE WORLD! MWAHH MWAHHHHH ❤️
+      </p>
+
+      <div style="text-align: center;">
+        <button class="btn-next" onclick="navigateTo('page5.html')">
+          thank you so much bb, iloveyou! 💕
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function navigateTo(url) {
+      const card = document.getElementById('card');
+      card.classList.add('page-exit');
+      setTimeout(() => {
+        window.location.href = url;
+      }, 500);
+    }
+
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.classList.add('heart-bg');
+      heart.innerText = ['❤️', '💖', '✨', '🌸', '💕'][Math.floor(Math.random() * 5)];
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = Math.random() * 3 + 3 + 's';
+      heart.style.fontSize = Math.random() * 18 + 12 + 'px';
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 6000);
+    }
+    setInterval(createHeart, 450);
+  </script>
+
+</body>
+</html>
